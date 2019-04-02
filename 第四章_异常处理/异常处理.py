@@ -1,3 +1,5 @@
+import random
+
 def no_return():
     print("i am about to raise an exception")
     raise Exception("this is always raised")
@@ -42,10 +44,29 @@ def funny_division3(anumber):
         raise
 
 
+# try:
+#     raise ValueError("this is an argument")
+# except ValueError as e:
+#     print("the arguments are", e.args)
+
+some_exceptions = [ValueError, TypeError, IndexError, None]
+
 try:
-    raise ValueError("this is an argument")
-except ValueError as e:
-    print("the arguments are", e.args)
+    choice = random.choice(some_exceptions)
+    print("raising {}".format(choice))
+    if choice:
+        raise choice
+
+except ValueError:
+    print("caught a value error")
+except TypeError:
+    print("caught a type error")
+except Exception as e:
+    print("cought some other error {}".format(e.__class__.__name__))
+else:
+    print("the code is called if there is no error")
+finally:
+    print("this is always called")
 
 if __name__ == '__main__':
     pass
@@ -69,3 +90,4 @@ if __name__ == '__main__':
     # for val in (0, "hello", 50.0, 13):
     #     print("testing {}".format(val), end=" ")
     #     print(funny_division3(val))
+

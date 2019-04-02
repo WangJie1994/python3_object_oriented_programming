@@ -1,0 +1,9 @@
+"""
+-BaseException
+|-SystemExit
+|-KeyboardInterrupt
+|-Exception
+ |-TypeError
+ |-...
+ |-...
+"""
