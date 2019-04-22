@@ -42,6 +42,7 @@ class DictSorted(dict):
     def __iter__(self):
         return self.ordered_keys.__iter__()
 
+
 ds = DictSorted()
 d = {}
 ds['a'] = 1
